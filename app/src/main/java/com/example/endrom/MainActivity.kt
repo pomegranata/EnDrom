@@ -8,15 +8,15 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Build
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.annotation.RequiresApi
 import com.example.endrom.databinding.ActivityMainBinding
 import java.util.Calendar
 import java.util.Date
 
-class MainActivity : ComponentActivity()  {
+class MainActivity : AppCompatActivity()  {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity()  {
         val year = binding.datePicker.year
 
         val calendar = Calendar.getInstance()
-        calendar.set(day, month, year, hour, minute)
+        calendar.set(year, month, day, hour, minute)
         return calendar.timeInMillis
     }
 
